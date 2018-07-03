@@ -98,6 +98,7 @@ import UIKit
     public func shouldPresent( _ contentViewController: UIViewController?, from superVC: UIViewController?, fullscreen: Bool = false) {
         if let content = contentViewController {
             detailVC = DetailViewController()
+	    detailVC.transitioningDelegate = self
 		self.superVC = superVC
             detailVC.addChildViewController(content)
             detailVC.detailView = content.view
